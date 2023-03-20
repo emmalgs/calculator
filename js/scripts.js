@@ -5,13 +5,12 @@ const screen = document.querySelector(".calc-screen")
 const clearBtn = document.querySelector(".clear")
 
 
+let num1;
+let operator;
+let num2; 
 
 // makes button value appear on calc-screen
 calcBtn.forEach(btn => btn.addEventListener('click', () => {
-    let num1;
-    let operator;
-    let num2; 
-    let answer;
     if (btn.value == parseInt(btn.value)) {
         screen.innerHTML += `${btn.value}`;
     } 
@@ -23,17 +22,26 @@ calcBtn.forEach(btn => btn.addEventListener('click', () => {
         console.log(operator)
     } else {
         num2 = parseInt(screen.innerHTML);
+        screen.innerHTML = `${answer(num1,num2)}`
         console.log(num2)
-        if (operator == "+") {
-            return answer = add(num1,num2);
-        } else if (operator == '-') {
-            return answer = subtract(num1,num2)
-        } else {console.log(answer)}
         
     }
-    
 }));
 
+function answer(num1, num2) {
+    let result;
+    if (num1 != '' && num2 != '') {
+        if (operator == "+") {
+           result = add(num1,num2);
+        } else if (operator == '-') {
+            result = subtract(num1,num2)
+        } else if (operator == '*') {
+            result = multiply(num1,num2)
+         } else {result = divide(num1,num2)}
+    } else {screen.innerHTML= 'ERROR' }
+    return result
+    console.log(result)
+}
 
 function add(number1, number2) {
     return number1 + number2;
