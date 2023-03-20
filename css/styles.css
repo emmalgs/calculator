@@ -17,10 +17,23 @@
     margin-top: 10px;
     border-radius: 30px;
     border: 8px solid grey;
-    color: white
+    color: yellow;
+    text-align: right;
+    padding: 20px;
+    font-size: 40px;
+    font-family: monospace;
 }
 
-.calc-num {
+.btn {
     padding: 5px;
     margin: 10px;
+    font-size: 90px; 
+    font-family: monospace;
+    border-radius: 20px;
+
+
+}
+
+.btn:active {
+    background-color: rgb(232, 21, 21); 
 }

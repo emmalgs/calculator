@@ -1,13 +1,36 @@
 // business logic
-const calcBtn = document.querySelectorAll(".calc-btn")
+const calcBtn = document.querySelectorAll(".btn")
+const opt = document.querySelectorAll(".opt")
 const screen = document.querySelector(".calc-screen")
-console.log(calcBtn)
+const clearBtn = document.querySelector(".clear")
 
-calcBtn.addEventListener('click', display);
+let num1 = '';
+let operator;
+let num2 = '';
+// makes button value appear on calc-screen
+calcBtn.forEach(btn => btn.addEventListener('click', () => {
+    if (btn.value == parseInt(btn.value)) {
+        screen.innerHTML += `${btn.value}`;
+        num1 = parseInt(screen.innerHTML);
+        console.log(num1)
+    } else if (btn.value == '+' || btn.value == '-' || btn.value == '/' || btn.value == '*') {
+        screen.innerHTML = '';
+        operator = btn.value;
+        console.log(operator)
+    } else if (btn.value == parseInt(btn.value)) {
+        screen.innerHTML += `${btn.value}`;
+        num2 = parseInt(screen.innerHTML)
+        console.log(num2)
+    } else if (btn.value == "=") {
+        if (operator == "+") {
+            console.log(`num1 is equal to ${num1}`)
+            console.log(`num2 is equal to ${num2}`)
+            screen.innerHTML = add(num1,num2)
+            console.log(add(num1, num2))
+        }
+    }
+}));
 
-function display() {
-    screen.innerHTML = `${calcBtn.value}`
-}
 
 function add(number1, number2) {
     return number1 + number2;
@@ -25,20 +48,9 @@ function multiply(number1,number2) {
     return number1 * number2;
 }
 
-// user interface logic
-// const number1 = parseInt(prompt("Enter a number:"));
-// const number2 = parseInt(prompt("Enter another number:"));
-// window.alert("The addition of " + number1 + " and " + number2 + " is:  " + add(number1, number2)
-//     + "\nThe subtraction of " + number1 + " and " + number2 + " is:  " + 
-//     subtract(number1, number2) + "\nThe division of " + number1 + " and " + number2 + " is:  " + divide(number1, number2)
-//     + "\nThe multiplication of " + number1 + " and " + number2 + " is:  " + multiply(number1, number2))
 
 
-
-// window.alert("The subtraction of the two numbers is " + subtract(number1, number2));
-// window.alert("The division of the two numbers is " + divide(number1, number2));
-// window.alert("The multiplication of the two numbers is " + multiply(number1, number2));
-
-
-
-
+// reloads page when clear button is clicked
+clearBtn.addEventListener("click", () => {
+    window.location.reload();
+})
