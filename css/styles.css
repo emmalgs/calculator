@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.calc-body {
+    height: 900px;
+    width: 650px;
+    background-color: rgb(210, 200, 200);
+    margin: auto;
+    border-radius: 30px;
+}
+
+.calc-screen {
+    height: 110px;
+    width: 650px;
+    background-color: black;
+    margin-top: 10px;
+    border-radius: 30px;
+    border: 8px solid grey;
+    color: white
+}
+
+.calc-num {
+    padding: 5px;
+    margin: 10px;
+}
