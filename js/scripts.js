@@ -17,8 +17,8 @@ calcBtn.forEach(btn => btn.addEventListener('click', () => {
     else if (btn.value == '+' || btn.value == '-' || btn.value == '/' || btn.value == '*') {
         num1 = parseInt(screen.innerHTML)
         operator = btn.value;
-    } else {
         screen.innerHTML = '';
+    } else {
         num2 = parseInt(screen.innerHTML);
         screen.innerHTML = `${answer(num1,num2)}`        
     }
