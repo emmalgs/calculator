@@ -16,15 +16,11 @@ calcBtn.forEach(btn => btn.addEventListener('click', () => {
     } 
     else if (btn.value == '+' || btn.value == '-' || btn.value == '/' || btn.value == '*') {
         num1 = parseInt(screen.innerHTML)
-        screen.innerHTML = '';
         operator = btn.value;
-        console.log(num1)
-        console.log(operator)
     } else {
+        screen.innerHTML = '';
         num2 = parseInt(screen.innerHTML);
-        screen.innerHTML = `${answer(num1,num2)}`
-        console.log(num2)
-        
+        screen.innerHTML = `${answer(num1,num2)}`        
     }
 }));
 
@@ -40,7 +36,6 @@ function answer(num1, num2) {
          } else {result = divide(num1,num2)}
     } else {screen.innerHTML= 'ERROR' }
     return result
-    console.log(result)
 }
 
 function add(number1, number2) {
